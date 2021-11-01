@@ -1,0 +1,50 @@
+swagger: '2.0'
+info:
+  title: API микросервиса интеграции
+  version: 1.0.1
+
+paths:
+  /ping:
+    get:
+      tags:
+        - Integration
+      operationId: ping
+      description: ping
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/pongModel'
+        400:
+          description: Baq request
+          schema:
+            $ref: '#/definitions/errorModel'
+        404:
+          description: Not Found
+        500:
+          description: Internal server error
+
+
+definitions:
+
+  errorModel:
+    type: object
+    description: Описание ошибки
+    required:
+      - errors
+    properties:
+      errors:
+        type: array
+        items:
+          type: string
+
+  pongModel:
+    type: object
+    description: Описание ошибки
+    required:
+      - result
+    properties:
+      result:
+        type: string
