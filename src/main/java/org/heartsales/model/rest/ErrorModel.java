@@ -16,7 +16,6 @@ import javax.validation.constraints.*;
  */
 @ApiModel(description = "Описание ошибки")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2021-11-01T19:25:55.649+03:00")
 
 public class ErrorModel   {
   @JsonProperty("errors")
