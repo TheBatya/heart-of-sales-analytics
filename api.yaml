@@ -7,7 +7,7 @@ paths:
   /ping:
     get:
       tags:
-        - Integration
+        - Ping
       operationId: ping
       description: ping
       produces:

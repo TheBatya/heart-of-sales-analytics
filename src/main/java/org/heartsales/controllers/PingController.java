@@ -7,12 +7,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class IntegrationController implements IntegrationApi {
+public class PingController implements PingApi {
 
     final private PingService pingService;
 
     @Autowired
-    public IntegrationController(PingService pingService) {
+    public PingController(PingService pingService) {
         this.pingService = pingService;
     }
 

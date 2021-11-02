@@ -30,10 +30,10 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
-@Api(value = "Integration", description = "the Integration API")
-public interface IntegrationApi {
+@Api(value = "Ping", description = "the Ping API")
+public interface PingApi {
 
-    Logger log = LoggerFactory.getLogger(IntegrationApi.class);
+    Logger log = LoggerFactory.getLogger(PingApi.class);
 
     default Optional<ObjectMapper> getObjectMapper() {
         return Optional.empty();
@@ -47,7 +47,7 @@ public interface IntegrationApi {
         return getRequest().map(r -> r.getHeader("Accept"));
     }
 
-    @ApiOperation(value = "", nickname = "ping", notes = "ping", response = PongModel.class, tags={ "Integration", })
+    @ApiOperation(value = "", nickname = "ping", notes = "ping", response = PongModel.class, tags={ "Ping", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "OK", response = PongModel.class),
         @ApiResponse(code = 400, message = "Baq request", response = ErrorModel.class),
@@ -67,7 +67,7 @@ public interface IntegrationApi {
                 }
             }
         } else {
-            log.warn("ObjectMapper or HttpServletRequest not configured in default IntegrationApi interface so no example is generated");
+            log.warn("ObjectMapper or HttpServletRequest not configured in default PingApi interface so no example is generated");
         }
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
