@@ -1,0 +1,1 @@
+insert into ping (value) values ('pong-pong');
